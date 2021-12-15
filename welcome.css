@@ -37,3 +37,14 @@ header a:hover {
 .image-input{
     padding-top: 15px;
 }
+.flex-table{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 2rem;
+}
+.padding-table{
+    padding: 2rem 5.5rem 0rem 5.5rem!important;
+}
