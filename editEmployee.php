@@ -77,7 +77,7 @@ if (isset($_POST["edit_employee"])) {
     </header>
     <div class="card">
         <form action="" method="post">
-            <h2 class="title">Employee Details</h2>
+            <h2 class="title">Edit Employee</h2>
             <div class="input-field">
                 <i class="fas fa-user"></i>
                 <input type="text" placeholder="Full Name" name="name" value="<?php echo $name; ?>" required />

@@ -9,7 +9,27 @@ if (!isset($_SESSION['user_id'])) {
 }
 include 'connection.php';
 
+if (isset($_POST["addproject"])) {
+    $project_name = $_POST["project_name"];
+    $cost = $_POST["cost"];
+    $start_date = date('Y-m-d', strtotime($_POST["start_date"]));
+    $close_date = date('Y-m-d', strtotime($_POST["close_date"]));
+
+    $sql = "INSERT INTO project (project_name,cost,start_date,close_date) VALUES ('$project_name', '$cost', '$start_date', '$close_date')";
+    $result = mysqli_query($conn, $sql);
+    if ($result) {
+        $_POST["project_name"] = "";
+        $_POST["cost"] = "";
+        $_POST["start_date"] = "";
+        $_POST["close_date"] = "";
+        echo "<script>alert('Employee added successfully');</script>";
+        // header("Location: addEmployee.php");
+    } else {
+        echo "<script>alert('Employee add failed');</script>";
+    }
+}
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -39,19 +59,21 @@ include 'connection.php';
             <h3 class="title">Project Details</h3>
             <div class="input-field">
                 <i class="fas fa-project-diagram"></i>
-                <input type="text" placeholder="Project Name" name="full_name" value="<?php echo $_POST["regi_full_name"]; ?>" required />
+                <input type="text" placeholder="Project Name" name="project_name" value="<?php echo $_POST['project_name']; ?>" required />
             </div>
             <div class="input-field">
                 <i class="fas fa-dollar-sign"></i>
-                <input type="number" id="cost" placeholder="Amount" name="cost" value="<?php echo $_POST["regi_email"]; ?>" required />
+                <input type="text" id="cost" placeholder="Amount" name="cost" value="<?php echo $_POST['cost']; ?>" required />
             </div>
+            <label for="">Starting Date</label>
             <div class="input-field">
                 <i class="fas fa-hourglass-start"></i>
-                <input type="date" id="phone" name="start_date" placeholder="Starting Date" required value="<?php echo $_POST["regi_phone"]; ?>" />
+                <input type="date" id="start_date" name="start_date" placeholder="Starting Date" required value="<?php echo $_POST['start_date']; ?>" />
             </div>
+            <label for="">Closing Date</label>
             <div class="input-field">
                 <i class="fas fa-hourglass-end"></i>
-                <input type="date" name="close_date" placeholder="Closing Date" required value="<?php echo $_POST["regi_password"]; ?>" />
+                <input type="date" name="close_date" placeholder="Closing Date" required value="<?php echo $_POST['close_date']; ?>" />
             </div>
             <input type="submit" class="btn" name="addproject" value="Add Project" />
         </form>

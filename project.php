@@ -1,6 +1,6 @@
 <?php
 session_start();
-// error_reporting(0);
+error_reporting(0);
 
 // echo $_SESSION["user_id"];
 
@@ -18,6 +18,7 @@ include 'connection.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="welcome.css" />
+    <link rel="stylesheet" href="style.css" />
     <title>Project</title>
     <style>
         #customers {
@@ -64,34 +65,47 @@ include 'connection.php';
             </nav>
         </header>
         <div class="padding-table">
-            <button><a href="addProject.php">Add Project</a></button>
+            <button class="btn"><a href="addProject.php">Add Project</a></button>
 
             <table id="customers">
                 <tr>
-                    <th>SL</th>
-                    <th>Name</th>
-                    <th>Cost</th>
-                    <th>Start Date</th>
-                    <th>Close Date</th>
+                    <th>ID</th>
+                    <th>Project Name</th>
+                    <th>Project Cost</th>
+                    <th>Starting Date</th>
+                    <th>Closing Date</th>
                     <th>Operations</th>
                 </tr>
-                <tr>
+                <?php
+
+                $sql = "SELECT * FROM project";
+                $result = mysqli_query($conn, $sql);
+                if ($result) {
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        $id = $row['id'];
+                        $project_name = $row['project_name'];
+                        $cost = $row['cost'];
+                        $start_date = $row['start_date'];
+                        $close_date = $row['close_date'];
+                        echo '<tr>
+                    <td>' . $id . '</td>
+                    <td>' . $project_name . '</td>
+                    <td>' . $cost . '</td>
+                    <td>' . $start_date . '</td>
+                    <td>' . $close_date . '</td>
+                    <td><button class="btn"><a href="editProject.php?editid=' . $id . '">Edit</a></button><button class="btn"><a href="deleteProject.php?deleteid=' . $id . '">Delete</a></button></td>
+                </tr>';
+                    }
+                }
+                ?>
+                <!-- <tr>
                     <td>6</td>
                     <td>Alfreds Futterkiste</td>
                     <td>Maria Anders</td>
                     <td><input type="datetime-local" name="" id=""></td>
                     <td><input type="datetime-local" name="" id=""></td>
-                    <td><button>Edit</button><button>Delete</button></td>
-                </tr>
-                <tr>
-                    <td>7</td>
-                    <td>Berglunds snabbköp</td>
-                    <td>Christina Berglund</td>
-                    <td><input type="datetime-local" name="" id=""></td>
-                    <td><input type="datetime-local" name="" id=""></td>
-                    <td><button>Edit</button><button>Delete</button></td>
-
-                </tr>
+                    <td><button class="btn">Edit</button><button class="btn">Delete</button></td>
+                </tr> -->
             </table>
         </div>
     </div>
