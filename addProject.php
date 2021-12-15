@@ -1,3 +1,15 @@
+<?php
+session_start();
+error_reporting(0);
+
+// echo $_SESSION["user_id"];
+
+if (!isset($_SESSION['user_id'])) {
+    header("Location: index.php");
+}
+include 'connection.php';
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,7 +19,7 @@
     <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="welcome.css" />
-    <title>Sign Up</title>
+    <title>Add Project</title>
 </head>
 
 <body>
@@ -24,31 +36,24 @@
     </header>
     <div class="card">
         <form action="" method="post">
-            <h2 class="title">Sign up</h2>
+            <h3 class="title">Project Details</h3>
             <div class="input-field">
-                <i class="fas fa-user"></i>
-                <input type="text" placeholder="Full Name" name="regi_full_name" value="<?php echo $_POST["regi_full_name"]; ?>" required />
-            </div>
-            <div class="input-field">
-                <i class="fas fa-envelope"></i>
-                <input type="email" id="email" placeholder="Email" name="regi_email" value="<?php echo $_POST["regi_email"]; ?>" required />
+                <i class="fas fa-project-diagram"></i>
+                <input type="text" placeholder="Project Name" name="full_name" value="<?php echo $_POST["regi_full_name"]; ?>" required />
             </div>
             <div class="input-field">
-                <i class="fas fa-phone"></i>
-                <input type="tel" id="phone" name="regi_phone" placeholder="01XXXXXXXXX" pattern="[0-1]{2}[1-9]{1}[0-9]{8}" min="11" max="11" required placeholder="Phone" value="<?php echo $_POST["regi_phone"]; ?>" />
+                <i class="fas fa-dollar-sign"></i>
+                <input type="number" id="cost" placeholder="Amount" name="cost" value="<?php echo $_POST["regi_email"]; ?>" required />
             </div>
             <div class="input-field">
-                <i class="fas fa-lock"></i>
-                <input type="password" name="regi_password" placeholder="Password minimum 6 characters " required minlength="6" maxlength="40" value="<?php echo $_POST["regi_password"]; ?>" />
+                <i class="fas fa-hourglass-start"></i>
+                <input type="date" id="phone" name="start_date" placeholder="Starting Date" required value="<?php echo $_POST["regi_phone"]; ?>" />
             </div>
             <div class="input-field">
-                <i class="fas fa-lock"></i>
-                <input type="password" name="regi_confirm_password" placeholder="Confirm Password" required value="<?php echo $_POST["regi_confirm_password"]; ?>" />
+                <i class="fas fa-hourglass-end"></i>
+                <input type="date" name="close_date" placeholder="Closing Date" required value="<?php echo $_POST["regi_password"]; ?>" />
             </div>
-            <input type="submit" class="btn" name="register" value="Sign up" />
-            <div class="link-margin">
-                <p>Already have an account? <a class="text-link" href="index.php">Log In</a></p>
-            </div>
+            <input type="submit" class="btn" name="addproject" value="Add Project" />
         </form>
     </div>
 </body>

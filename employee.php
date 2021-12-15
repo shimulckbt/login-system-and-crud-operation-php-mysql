@@ -76,13 +76,17 @@ include 'connection.php';
                     <th>City</th>
                     <th>Operations</th>
                 </tr>
-                <tr>
+                <?php
+                
+                
+                
+                ?>
+                <!-- <tr>
                     <td>6</td>
                     <td>Alfreds Futterkiste</td>
                     <td>Maria Anders</td>
                     <td>Germany</td>
                     <td>Germany</td>
-
                     <td><button>Edit</button><button>Delete</button></td>
                 </tr>
                 <tr>
@@ -91,10 +95,8 @@ include 'connection.php';
                     <td>Christina Berglund</td>
                     <td>Sweden</td>
                     <td>Sweden</td>
-
                     <td><button>Edit</button><button>Delete</button></td>
-
-                </tr>
+                </tr> -->
             </table>
         </div>
     </div>
