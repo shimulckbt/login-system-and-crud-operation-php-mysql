@@ -12,10 +12,9 @@ include 'connection.php';
 if (isset($_GET['deleteid'])) {
     $id = $_GET['deleteid'];
 
-    $sql = "delete from `employee` where id=$id";
+    $sql = "DELETE FROM employee WHERE id=$id";
     $result = mysqli_query($conn, $sql);
     if ($result) {
-        echo "<script>alert('Employee deleted successfully');</script>";
         header('Location: employee.php');
     } else {
         echo "<script>alert('Employee deletion failed');</script>";

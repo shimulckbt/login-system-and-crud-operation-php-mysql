@@ -95,7 +95,7 @@ include 'connection.php';
                     <td>' . $email . '</td>
                     <td>' . $phone . '</td>
                     <td>' . $city . '</td>
-                    <td><button class="btn">Edit</button><button class="btn"><a href="employeeDelete.php?deleteid=' . $id . '">Delete</a></button></td>
+                    <td><button class="btn"><a href="editEmployee.php?editid=' . $id . '">Edit</a></button><button class="btn"><a href="employeeDelete.php?deleteid=' . $id . '">Delete</a></button></td>
                 </tr>';
                     }
                 }
