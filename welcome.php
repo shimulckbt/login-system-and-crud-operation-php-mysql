@@ -74,21 +74,21 @@ if (!isset($_SESSION['user_id'])) {
                         <th>Name</th>
                         <th>Email</th>
                         <th>Phone</th>
-                        <th>Operations</th>
+                        <th>City</th>
                     </tr>
                     <tr>
                         <td>6</td>
                         <td>Alfreds Futterkiste</td>
                         <td>Maria Anders</td>
                         <td>Germany</td>
-                        <td><button>Edit</button><button>Delete</button></td>
+                        <td>Chattogram</td>
                     </tr>
                     <tr>
                         <td>7</td>
                         <td>Berglunds snabbköp</td>
                         <td>Christina Berglund</td>
                         <td>Sweden</td>
-                        <td><button>Edit</button><button>Delete</button></td>
+                        <td>Chattogram</td>
 
                     </tr>
                 </table>
@@ -102,21 +102,22 @@ if (!isset($_SESSION['user_id'])) {
                         <th>Name</th>
                         <th>Cost</th>
                         <th>Start Date</th>
-                        <th>Operations</th>
+                        <th>Close DAte</th>
                     </tr>
                     <tr>
                         <td>6</td>
                         <td>Alfreds Futterkiste</td>
                         <td>Maria Anders</td>
-                        <td>Germany</td>
-                        <td><button>Edit</button><button>Delete</button></td>
+                        <td><input type="date" name="" id=""></td>
+                        <td><input type="date" name="" id=""></td>
+
                     </tr>
                     <tr>
                         <td>7</td>
                         <td>Berglunds snabbköp</td>
                         <td>Christina Berglund</td>
-                        <td>Sweden</td>
-                        <td><button>Edit</button><button>Delete</button></td>
+                        <td><input type="date" name="" id=""></td>
+                        <td><input type="date" name="" id=""></td>
 
                     </tr>
                 </table>

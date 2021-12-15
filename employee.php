@@ -73,6 +73,7 @@ include 'connection.php';
                     <th>Name</th>
                     <th>Email</th>
                     <th>Phone</th>
+                    <th>City</th>
                     <th>Operations</th>
                 </tr>
                 <tr>
@@ -80,6 +81,8 @@ include 'connection.php';
                     <td>Alfreds Futterkiste</td>
                     <td>Maria Anders</td>
                     <td>Germany</td>
+                    <td>Germany</td>
+
                     <td><button>Edit</button><button>Delete</button></td>
                 </tr>
                 <tr>
@@ -87,6 +90,8 @@ include 'connection.php';
                     <td>Berglunds snabbköp</td>
                     <td>Christina Berglund</td>
                     <td>Sweden</td>
+                    <td>Sweden</td>
+
                     <td><button>Edit</button><button>Delete</button></td>
 
                 </tr>

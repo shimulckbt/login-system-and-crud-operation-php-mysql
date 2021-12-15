@@ -72,20 +72,23 @@ include 'connection.php';
                     <th>Name</th>
                     <th>Cost</th>
                     <th>Start Date</th>
+                    <th>Close Date</th>
                     <th>Operations</th>
                 </tr>
                 <tr>
                     <td>6</td>
                     <td>Alfreds Futterkiste</td>
                     <td>Maria Anders</td>
-                    <td>Germany</td>
+                    <td><input type="datetime-local" name="" id=""></td>
+                    <td><input type="datetime-local" name="" id=""></td>
                     <td><button>Edit</button><button>Delete</button></td>
                 </tr>
                 <tr>
                     <td>7</td>
                     <td>Berglunds snabbköp</td>
                     <td>Christina Berglund</td>
-                    <td>Sweden</td>
+                    <td><input type="datetime-local" name="" id=""></td>
+                    <td><input type="datetime-local" name="" id=""></td>
                     <td><button>Edit</button><button>Delete</button></td>
 
                 </tr>
