@@ -66,7 +66,7 @@ if (!isset($_SESSION['user_id'])) {
         </header>
         <div class="flex-table">
             <div>
-                <button>Add Employee</button>
+                <button><a href="addEmployee.php">Add Employee</a></button>
 
                 <table id="customers">
                     <tr>
@@ -94,7 +94,7 @@ if (!isset($_SESSION['user_id'])) {
                 </table>
             </div>
             <div>
-                <button>Add Project</button>
+                <button><a href="addProject.php">Add Project</a></button>
 
                 <table id="customers">
                     <tr>

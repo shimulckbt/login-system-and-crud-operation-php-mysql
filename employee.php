@@ -8,6 +8,7 @@ if (!isset($_SESSION['user_id'])) {
     header("Location: index.php");
 }
 include 'connection.php';
+
 ?>
 
 <!DOCTYPE html>
@@ -19,6 +20,7 @@ include 'connection.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="welcome.css" />
+    <link rel="stylesheet" href="style.css" />
     <title>Employee</title>
     <style>
         #customers {
@@ -65,11 +67,11 @@ include 'connection.php';
             </nav>
         </header>
         <div class="padding-table">
-            <button>Add Employee</button>
+            <button class="btn"><a href="addEmployee.php">Add Employee</a></button>
 
             <table id="customers">
                 <tr>
-                    <th>SL</th>
+                    <th>ID</th>
                     <th>Name</th>
                     <th>Email</th>
                     <th>Phone</th>
@@ -77,26 +79,27 @@ include 'connection.php';
                     <th>Operations</th>
                 </tr>
                 <?php
-                
-                
-                
+
+                $sql = "SELECT * FROM employee";
+                $result = mysqli_query($conn, $sql);
+                if ($result) {
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        $id = $row['id'];
+                        $name = $row['name'];
+                        $email = $row['email'];
+                        $phone = $row['phone'];
+                        $city = $row['city'];
+                        echo '<tr>
+                    <td>' . $id . '</td>
+                    <td>' . $name . '</td>
+                    <td>' . $email . '</td>
+                    <td>' . $phone . '</td>
+                    <td>' . $city . '</td>
+                    <td><button class="btn">Edit</button><button class="btn"><a href="employeeDelete.php?deleteid=' . $id . '">Delete</a></button></td>
+                </tr>';
+                    }
+                }
                 ?>
-                <!-- <tr>
-                    <td>6</td>
-                    <td>Alfreds Futterkiste</td>
-                    <td>Maria Anders</td>
-                    <td>Germany</td>
-                    <td>Germany</td>
-                    <td><button>Edit</button><button>Delete</button></td>
-                </tr>
-                <tr>
-                    <td>7</td>
-                    <td>Berglunds snabbköp</td>
-                    <td>Christina Berglund</td>
-                    <td>Sweden</td>
-                    <td>Sweden</td>
-                    <td><button>Edit</button><button>Delete</button></td>
-                </tr> -->
             </table>
         </div>
     </div>

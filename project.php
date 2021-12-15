@@ -64,7 +64,7 @@ include 'connection.php';
             </nav>
         </header>
         <div class="padding-table">
-            <button>Add Project</button>
+            <button><a href="addProject.php">Add Project</a></button>
 
             <table id="customers">
                 <tr>
